@@ -1,0 +1,204 @@
+/*Montserrat, Fraunces Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+:root{
+
+  /*colors*/
+  --col-cream: hsl(30, 38%, 92%);
+  --col-btn-hover: hsl(158, 36%, 32%);
+  --col-dark-cyan: hsl(158, 36%, 37%);
+  --col-very-dark-blue: hsl(212, 21%, 14%);
+  --col-dark-grayish-blue: hsl(228, 12%, 48%);
+  --col-white: hsl(0, 0%, 100%);
+
+  --product:14px;
+  --main-heading:3rem;
+  --line-height:29px;
+  --big-price:2.5rem;
+  --radius:0.5rem;
+
+  /*font family*/
+  --ff-montserrat: 'Montserrat', sans-serif;
+  --ff-fraunces:'Fraunces' ,serif;
+
+}
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	font-family: va(--ff-montserrat);
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 48
+}
+p, h2{
+  overflow-wrap: break-word;
+}
+body{
+  background-color:var(--col-cream);
+  width:100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.container{
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+}
+/*----------------------------
+---------IMAGE BOX------------
+-----------------------------*/
+.container-image{
+  width: 50%;
+  background-image: url('../images/image-product-desktop.jpg');
+  background-position: center;
+  background-size: cover; 
+  background-repeat: no-repeat;
+}
+
+/*----------------------------
+----------MAIN INFO-----------
+-----------------------------*/
+.product-info{
+  width: 50%;
+  padding: 2.5rem 4rem;
+  background-color: var(--col-white);
+}
+.product{
+  color: var(--col-dark-grayish-blue);
+  letter-spacing: 4px;
+  font-size:var(--product);
+}
+.main-heading{
+  color: var(--col-very-dark-blue);
+  font-family:var(--ff-fraunces) ;
+  margin-block: 20px;
+  font-size: var(--main-heading);
+  line-height: 1;
+}
+.info-text{
+  line-height:var(--line-height);
+  color: var(--col-dark-grayish-blue);
+}
+/*PRICE*/
+.price{
+  margin: 25px 0px;
+  display: flex;
+  align-items: center;
+}
+.new-price{
+  font-family: var(--ff-fraunces);
+  font-size: var(--big-price);
+  font-weight: 700;
+  color: var(--col-dark-cyan);
+}
+.old-price{
+  margin-left: 45px;
+  text-decoration: line-through;
+  color: var(--col-dark-grayish-blue);
+}
+/*BUTTON*/
+#add-to-cart-btn{
+  width: 100%;
+  padding: 15px;
+  border-radius: var(--radius);
+  border: none;
+  background-color: var(--col-dark-cyan);
+  color: var(--col-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.6s ease-in-out;
+}
+#add-to-cart-btn:is(:hover, :focus){
+  background-color: var(--col-btn-hover);
+  cursor:pointer;
+}
+.cart-icon{
+  margin-right: 10px;
+}
+
+/*----------------------------
+------------MEDIA-------------
+-----------------------------*/
+@media (max-width:920px){
+  :root{
+    --product:12px;
+    --main-heading:2.3rem;
+    --line-height:26px;
+    --big-price:1.9rem;
+  }
+}
+@media (max-width:780px){
+  .container{
+    flex-direction: column;
+    max-width: 100%;
+    width: 75%;
+  }
+  .container-image,
+  .product-info{
+    width: 100%;
+  }
+  .container-image{
+    height: 420px;
+    background-position:top -7rem center;
+  }
+  .product-info{
+    padding: 1.5rem 2rem;
+  }
+}
+@media (max-width:600px){
+  .container{
+    width: 100%;
+  }
+  .container-image{
+    background-image: url("../images/image-product-mobile.jpg");
+    background-position:top 0rem center;
+  }
+}
+@media (max-width:500px){
+  .container-image{
+    height: 288px;
+  }
+  body{
+    padding: 1rem;
+  }
+  :root{
+    --main-heading:1.89rem;
+    --line-height:23px;
+    --big-price:1.7rem;
+  }
+  #add-to-cart-btn{
+    padding: 12px;
+  }
+}
+@media (max-width:400px){
+  .container-image{
+    height: 210px;
+  }
+  .info-text{
+    font-size: 0.9rem;
+  }
+  .price{
+    margin: 20px 0;
+  }
+  #add-to-cart-btn{
+    padding: 9px;
+  }
+  .btn-text{
+    font-weight: 400;
+  }
+  .product-info{
+    padding-inline: 1.8rem;
+  }
+}
